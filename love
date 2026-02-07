@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Muskan ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  padding: 28px;
+  border-radius: 22px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  animation: fadeIn 1.4s ease;
+}
+
+h1 {
+  color: #ff4d6d;
+}
+
+p {
+  font-size: 16.5px;
+  color: #444;
+}
+
+.buttons {
+  margin-top: 25px;
+  position: relative;
+  height: 70px;
+}
+
+button {
+  padding: 12px 28px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+#no {
+  background: #ddd;
+  position: absolute;
+  left: 180px;
+}
+
+#message {
+  display: none;
+  margin-top: 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.shayari {
+  margin-top: 15px;
+  font-style: italic;
+  color: #b4003c;
+  font-size: 15.5px;
+}
+
+.playful {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #666;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+  from {transform: translateY(0); opacity: 1;}
+  to {transform: translateY(-800px); opacity: 0;}
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+  <h1>Muskan ❤️</h1>
+
+  <p>
+    Tum meri pasandida aurat ho…<br>
+    aur honestly, kaafi time se ek baat kehni thi 🙈
+  </p>
+
+  <p><strong>Will you be mine?</strong></p>
+
+  <div class="buttons">
+    <button id="yes">Yes 💖</button>
+    <button id="no">No 😜</button>
+  </div>
+
+  <div id="message">
+    <p>
+      Okay… ab serious ho jaata hoon 🥺❤️<br><br>
+      I always wanted you to be mine.<br>
+      I promise I will always take care of you,<br>
+      support you, respect you,<br>
+      aur kabhi tumhari smile ka reason banna chahta hoon.
+    </p>
+
+    <div class="shayari">
+      “Tum ‘No’ keh bhi do toh dil maan hi nahi maanta,<br>
+      isliye pehle muskura diya… phir dil ki baat sunaata.”
+    </div>
+
+    <div class="playful">
+      (Waise No ka button bhaag raha tha…<br>
+      thoda sa cheat toh banta hai 😌)
+    </div>
+
+    <p style="margin-top:15px;">💍</p>
+  </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const msg = document.getElementById("message");
+
+noBtn.addEventListener("mouseover", () => {
+  noBtn.style.left = Math.random() * 250 + "px";
+  noBtn.style.top = Math.random() * 80 + "px";
+});
+
+yesBtn.addEventListener("click", () => {
+  msg.style.display = "block";
+});
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}
+
+setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
+
